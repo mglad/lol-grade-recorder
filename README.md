@@ -4,11 +4,12 @@ Records League of Legends grades and uploads data to firebase. Recorded data inc
 * In-game overlay with estimated grade
 * Online tool to view stats needed for a given grade per champion
 
-## How to Download
+## How to Run
 1. Go to latest releases [here](https://github.com/mglad/lol-grade-recorder/releases)
 2. Click on latest release
-3. Download and run lol-game-recorder.exe
+3. Download and run lol-game-recorder.exe 
+4. Leave running while playing League of Legends
 
-## How to Run
+## How to Develop
 1. `npm install`
 2. `npm run watch`
