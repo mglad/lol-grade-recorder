@@ -1,0 +1,13 @@
+{
+  "ts-node": { "files": true },
+  "compilerOptions": {
+    "target": "es2016",
+    "module": "commonjs",
+    "typeRoots": ["./src/types"],
+    "types": ["node"],
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true
+  }
+}
