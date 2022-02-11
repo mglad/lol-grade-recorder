@@ -22,7 +22,7 @@ const localState: { [key: string]: boolean } = {};
 export async function saveGrade(
   summonerName: string,
   grade: string,
-  matchId: number
+  matchId: string,
 ): Promise<void> {
   const key = `matches/${matchId}/${summonerName}`;
   if (key in localState) {

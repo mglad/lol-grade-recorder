@@ -15,8 +15,12 @@ async function tick(riotClient: RiotClient): Promise<void> {
   if (!currentSummoner?.displayName) {
     return;
   }
-
-  await saveGrade(currentSummoner.displayName, mastery.grade, mastery.gameId);
+  const region = await riotClient.getRegion();
+  if (!region?.region) {
+    return;
+  }
+  
+  await saveGrade(currentSummoner.displayName, mastery.grade, `${region.region}_${mastery.gameId}`);
 }
 
 async function run(): Promise<void> {

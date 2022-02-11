@@ -39,6 +39,13 @@ export type LolSummonerSummoner = {
   xpUntilNextLevel?: number;
 };
 
+export type RegionLocale = {
+  locale?: string;
+  region?: string;
+  webLanguage?: string;
+  webRegion?: string;
+};
+
 export default class RiotClient {
   client: AxiosInstance | undefined;
 
@@ -60,6 +67,13 @@ export default class RiotClient {
   async getCurrentSummoner(): Promise<LolSummonerSummoner | undefined> {
     const response = await tryX(
       this.client!.get<LolSummonerSummoner>("/lol-summoner/v1/current-summoner")
+    );
+    return response?.data;
+  }
+
+  async getRegion(): Promise<RegionLocale | undefined> {
+    const response = await tryX(
+      this.client!.get<RegionLocale>("/riotclient/region-locale")
     );
     return response?.data;
   }
